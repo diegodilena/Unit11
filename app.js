@@ -8,5 +8,9 @@ human()
 
 function ran() {
     var ran = Math.floor(Math.random() * 10) + 1
-    console.log(ran) 
+    console.log(ran)
+    alert(`Now the program will generate a new number`)
+    alert(`The number is ${ran}`)
+    return ran 
 }
+ran()
