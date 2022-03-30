@@ -1,3 +1,10 @@
+function game(){
+    human()
+    ran()
+    people()
+    AI()
+}
+
 function human() {
     var human = prompt("what is your name?")
     alert(`Hi ${human}, Welcome to the Twenty Game! The game is simple. Whoever gets closer to 20 wins, if you go over its an automatic lose. You will be playing againts my AI. GOOD LUCK.`)
@@ -11,10 +18,22 @@ function ran() {
     console.log(rand)
     return rand
 }
-ran()
 
-function user() {
-    alert(`You got ${rand}`)
-    return user
+function people() {
+    alert(`You got ${ran()}`)
+    return people
 } 
-user()
+people()
+
+function AI() {
+    alert(`The computer got ${ran()}`)
+    return AI
+}
+AI()
+
+function score() {
+
+}
+
+
+
