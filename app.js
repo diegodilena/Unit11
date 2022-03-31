@@ -3,6 +3,7 @@ function game(){
     ran()
     people()
     AI()
+    score()
 }
 
 function human() {
@@ -15,25 +16,50 @@ human()
 
 function ran() {
     var rand = Math.floor(Math.random() * 10) + 1
-    console.log(rand)
     return rand
 }
 
-function people() {
-    alert(`You got ${ran()}`)
-    return people
+function people(rand) {
+    var pscore = 0;
+    do{
+        var rand = ran()
+        var pscore = pscore + rand
+        alert(`Its your turn. You got ${rand}`)
+        var again = prompt(`Your total score is ${pscore}. Want to play again?`)
+    } while(again == "y")
+
+    return pscore
 } 
 people()
 
-function AI() {
-    alert(`The computer got ${ran()}`)
-    return AI
+function AI(rand) {
+    var cscore = 0;
+    do{
+        var rand = ran()
+        var cscore = cscore + rand
+        alert(`The computer got ${rand}`)
+        alert(`The computer total is ${cscore}`)
+    }while(again == "y")
+    return cscore
 }
 AI()
 
-function score() {
-
+function score(pscore , cscore) {
+    if((cscore < pscore) && (pscore <= 20)){
+        alert(`The AI scored ${cscore} and you scored ${pscore}.You WIN!!!`)
+        HUMANscore++
+    }else if(cscore == pscore){
+        alert(`The AI scored ${cscore} and you scored ${pscore}.You TIE!!!!!`)
+    }else if((cscore > pscore) && (pscore < 20)){
+        alert(`The AI scored ${cscore} and you scored ${pscore}.You LOST!!!!`)
+        COMPscore++
+    }
+    return score
 }
+score()
+
+alert(`Your total wins are ${pscore}!!!`)
+
 
 
 
